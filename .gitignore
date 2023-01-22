@@ -1,0 +1,4 @@
+divvy_env
+__pycache__
+.env
+migrations
