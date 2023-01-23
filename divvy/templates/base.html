@@ -8,9 +8,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="../static/css/main.css">
-<title>Title</title>
+<title>{{ title }}}</title>
 </head>
 <body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <hr>
+        {% block contntent %}{% endblock %}
+    </div>
+    {% block scripts %}{% endblock %}
     <nav class="ct-nav bg-danger">
         <div>
             <img src="../static/Images/icon-1.png" alt="">
@@ -34,8 +40,11 @@
             <a href="{{ url_for('auth.signup') }}">
                 <li class="text-warning">Sign-Up</li>
             </a>
-            <a href="{{ url_for('site.uploader') }}">
-                <li class="text-warning">Uploader</li>
+            <a href="{{ url_for('site.trip') }}">
+                <li class="text-warning">Table</li>
+            </a>
+            <a href="{{ url_for('site.index') }}">
+                <li class="text-warning">index</li>
             </a>
         </ul>
     </div>

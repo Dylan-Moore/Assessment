@@ -178,3 +178,48 @@ ul#horizontal-list a:nth-last-child(1){
     top: 10rem;
     color: white;
 }
+/*searchbar */
+.searchbar{
+    overflow: hidden;
+    background-color: #e9e9e9;
+}
+
+.searchbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.searchbar a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+.searchbar a.active{
+    background-color: #2196f3;
+    color: white;
+}
+
+.searchbar input[type=text]{
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.searchbar .search-container button{
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}

@@ -52,23 +52,23 @@ class User(db.Model, UserMixin):
         return f"User {self.email} has been added to the database"
 
 class Trip(db.Model):
-    id = db.Column(db.String, primary_key = True)
-    trip_id = db.Column(db.Integer)
-    start_time = db.Column(db.DateTime)
-    stop_time = db.Column(db.DateTime)
-    bikeid = db.Column(db.Integer)
-    from_station_id = db.Column(db.Integer)
+    # id = db.Column(db.String, primary_key = True)
+    trip_id = db.Column(db.String, primary_key = True)
+    start_time = db.Column(db.String)
+    stop_time = db.Column(db.String)
+    bikeid = db.Column(db.String)
+    from_station_id = db.Column(db.String)
     from_station_name = db.Column(db.String(150))
-    to_station_id = db.Column(db.Integer)
+    to_station_id = db.Column(db.String)
     to_station_name = db.Column(db.String(150))
     usertype = db.Column(db.String)
     gender = db.Column(db.String(150))
-    birthday = db.Column(db.Integer())
-    trip_duration = db.Column(db.Integer())
-    user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
+    birthday = db.Column(db.String())
+    trip_duration = db.Column(db.String())
+    # user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = True)
 
-    def __init__(self, trip_id, start_time, stop_time, bikeid, from_station_id, from_station_name, to_station_id, to_station_name, usertype, gender, birthday, trip_duration, user_token, id = ''):
-        self.id = self.set_id()
+    def __init__(self, trip_id, start_time, stop_time, bikeid, from_station_id, from_station_name, to_station_id, to_station_name, usertype, gender, birthday, trip_duration):
+        # self.id = self.set_id()
         self.trip_id = trip_id
         self.start_time = start_time
         self.stop_time = stop_time
@@ -81,7 +81,7 @@ class Trip(db.Model):
         self.gender = gender
         self.birthday = birthday
         self.trip_duration = trip_duration
-        self.user_token = user_token
+        # self.user_token = user_token
 
     def __repr__(self):
         return f"Trip {self.trip_id} from {self.from_station_name} to {self.to_station_name} took {self.trip_duration}"
